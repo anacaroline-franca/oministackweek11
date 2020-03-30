@@ -89,6 +89,69 @@ Response
 {
 }
 ~~~~
+
+**POST /ong**
+
+- URL: http://localhost:3333/ongs
+
+Request
+~~~~
+Body:
+{ 
+    "name": "MY ONG Example",
+    "email": "email@test.com",
+    "whatsapp": "000000000",
+    "city": "Recife",
+    "uf": "PE"
+}
+~~~~
+Response
+~~~~
+{
+  id: 12345
+}
+~~~~
+
+**GET /profile**
+
+- URL: http://localhost:3333/profile
+
+Request
+~~~~
+Header: {
+  Authorization: <ong_id>
+}
+~~~~
+Response
+~~~~
+{
+  [
+    "id": 1,
+    "title": "Title Example" ,
+    "description": "My incident description",
+    "value": 123,
+  ]
+}
+~~~~
+
+**POST /session**
+
+- URL: http://localhost:3333/session
+
+Request
+~~~~
+Body:
+{ 
+   "id": 123,
+}
+~~~~
+Response
+~~~~
+{
+  id: <Ong name>
+}
+~~~~
+
 ### Dependences
 - **celebrate** -> Used for request validation
 - **cors-env** -> Used to set environment variable
